@@ -20,7 +20,7 @@
   </head>
   <link rel="stylesheet" href="style.css" />
   <body>
-    <main class="container" >
+    <main class="container">
       <div class="left">
         <h1>Learn to code by watching others</h1>
         <p>
@@ -30,13 +30,30 @@
         </p>
       </div>
       <div class="right">
-        <h5 id="trial"><b>Try it free 7 days</b> then $20/mo. thereafter</h5>
+        <h5 id="trial">
+          <strong>Try it free 7 days</strong> then $20/mo. thereafter
+        </h5>
         <div class="form-control">
-          <form action="">
-            <input type="text" id="fName" placeholder="First Name" />
-            <input type="text" id="lName" placeholder="Last Name" />
-            <input type="email" id="email" placeholder="Email Address" />
-            <input type="password" id="password" placeholder="Password" />
+          <form action="" id="form">
+            <div class="input-group">
+              <input type="text" id="fName" placeholder="First Name" />
+              <span></span>
+            </div>
+
+            <div class="input-group">
+              <input type="text" id="lName" placeholder="Last Name" />
+              <span></span>
+            </div>
+            <div class="input-group">
+              <input type="email" id="email" placeholder="Email Address" />
+              <span></span>
+            </div>
+
+            <div class="input-group">
+              <input type="password" id="password" placeholder="Password" />
+              <span></span>
+            </div>
+
             <input type="submit" class="btn" value="Claim your free trial" />
           </form>
           <small
@@ -54,5 +71,6 @@
         >. Coded by <a href="#">Ibrahim Bakare</a>.
       </p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
