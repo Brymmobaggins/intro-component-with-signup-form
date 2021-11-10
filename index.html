@@ -14,13 +14,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- <script
+      src="https://kit.fontawesome.com/c446e7960e.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script defer src="script.js"></script>
   </head>
   <link rel="stylesheet" href="style.css" />
   <body>
-    <main class="container">
+    <div class="container">
       <div class="left">
         <h1>Learn to code by watching others</h1>
         <p>
@@ -34,27 +44,32 @@
           <strong>Try it free 7 days</strong> then $20/mo. thereafter
         </h5>
         <div class="form-control">
-          <form action="" id="form">
+          <form id="form">
             <div class="input-group">
               <input type="text" id="fName" placeholder="First Name" />
+              <img src="./images/icon-error.svg" alt="error-icon">
               <span></span>
             </div>
 
             <div class="input-group">
               <input type="text" id="lName" placeholder="Last Name" />
+              <img src="./images/icon-error.svg" alt="error-icon">
               <span></span>
             </div>
+
             <div class="input-group">
-              <input type="email" id="email" placeholder="Email Address" />
+              <input type="email" id="mail" placeholder="Email Address" />
+              <img src="./images/icon-error.svg" alt="error-icon">
               <span></span>
             </div>
 
             <div class="input-group">
               <input type="password" id="password" placeholder="Password" />
+              <img src="./images/icon-error.svg" alt="error-icon">
               <span></span>
             </div>
 
-            <input type="submit" class="btn" value="Claim your free trial" />
+            <button class="btn">Claim your free trial</button>
           </form>
           <small
             >By clicking the button, you are agreeing to our
@@ -62,15 +77,14 @@
           >
         </div>
       </div>
-    </main>
+    </div>
     <footer>
       <p class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Ibrahim Bakare</a>.
+        >Coded by <a href="#">Ibrahim Bakare</a>
       </p>
     </footer>
-    <script src="script.js"></script>
   </body>
 </html>

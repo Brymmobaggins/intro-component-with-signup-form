@@ -1,35 +1,61 @@
 const form = document.getElementById("form")
-const firstName = document.getElementById("fName")
-const lastName = document.getElementById("lName")
-const email = document.getElementById("email")
-// const password = document.getElementById("password")
-const errorMessage = document.querySelector('span')
+const firstname = document.getElementById("fName")
+const lastname = document.getElementById("lName")
+const email = document.getElementById("mail")
+const password = document.getElementById("password")
 
 form.addEventListener("submit", function (e) {
     e.preventDefault()
     checkInput()
-
 })
 function checkInput() {
-    const firstNameValue = firstName.value;
-    const lastNameValue = lastName.value;
-    const emailValue = email.value;
+    let firstnameValue = firstname.value;
+    let lastnameValue = lastname.value;
+    let emailValue = email.value;
+    let passwordValue = password.value
 
-    if (firstNameValue === "") {
-        errorMessage.textContent = "first name cannot be empty"
-        firstName.style.borderColor = "#d44646";
+    if (firstnameValue === "") {
+        showError(firstname, 'First Name cannot be empty')
     } else {
-        firstName.style.borderColor = "green"
+        removeError(firstname)
     }
-    if (lastNameValue === "") {
-        errorMessage.textContent = "last Name cannot be empty"
+    if (lastnameValue === "") {
+        showError(lastname, 'Last Name cannot be empty')
     } else {
-        lastName.style.borderColor = "green"
+        removeError(lastname)
     }
     if (emailValue === "") {
-        errorMessage.textContent = "Looks like this is not email"
-    } else {
-        
-
+        showError(email, 'Email cannot be empty')
+    } else if (!isValid(email)){
+    removeError(email,' Looks like is not an Email')
     }
+    if (passwordValue === "") {
+        showError(password, 'Password cannot be empty')
+    } else if (passwordValue.length <= 8) {
+        showError(password, 'Password is too short')
+    } else {
+        removeError(password)
+    }
+
+}
+
+function showError(input, message) {
+    let inputElement = input.parentElement // .input-group
+    const span = inputElement.querySelector("span")
+    // add error inside the span
+    span.textContent = message
+    // add error inside the class
+    inputElement.className = 'input-group error'
+    // formControl.classList.add('error')
+
+}
+function removeError(input) {
+    let inputElement = input.parentElement
+    inputElement.className = 'remove error'
+
+}
+function isValid(email) {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+
 }
