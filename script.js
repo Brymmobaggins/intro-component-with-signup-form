@@ -16,26 +16,26 @@ function checkInput() {
     const passwordValue = password.value
 
     if (firstnameValue === "") {
-        showError(firstname, 'first Name cannot be empty')
+        showError(firstname, 'First Name cannot be empty')
     } else {
         showSuccess(firstname)
     }
     if (lastnameValue === "") {
-        showError(lastname, 'last Name cannot be empty')
+        showError(lastname, 'Last Name cannot be empty')
     } else {
         showSuccess(lastname)
     }
     if (emailValue === '') {
-        showError(email, 'email cannot be empty')
+        showError(email, 'Email cannot be empty')
     } else if (!isValid(email)) {
         showError(email, 'Looks like this is not an email')
     } else {
         showSuccess(email)
     }
     if (passwordValue === "") {
-        showError(password, 'pasword cannot be empty')
+        showError(password, 'Pasword cannot be empty')
     } else if (passwordValue.length <= 7) {
-        showError(password, 'passord is too short')
+        showError(password, 'Passord is too short')
     } else {
         showSuccess(password)
     }
