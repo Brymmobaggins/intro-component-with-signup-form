@@ -1,61 +1,63 @@
-const form = document.getElementById("form")
-const firstname = document.getElementById("fName")
-const lastname = document.getElementById("lName")
-const email = document.getElementById("mail")
-const password = document.getElementById("password")
+const form = document.getElementById('form')
+const firstname = document.getElementById('fname')
+const lastname = document.getElementById('lname')
+const email = document.getElementById('email')
+const password = document.getElementById('password')
 
-form.addEventListener("submit", function (e) {
+form.addEventListener('submit', function (e) {
     e.preventDefault()
     checkInput()
+
 })
 function checkInput() {
-    let firstnameValue = firstname.value;
-    let lastnameValue = lastname.value;
-    let emailValue = email.value;
-    let passwordValue = password.value
+    const firstnameValue = firstname.value
+    const lastnameValue = lastname.value
+    const emailValue = email.value
+    const passwordValue = password.value
 
     if (firstnameValue === "") {
-        showError(firstname, 'First Name cannot be empty')
+        showError(firstname, 'first Name cannot be empty')
     } else {
-        removeError(firstname)
+        showSuccess(firstname)
     }
     if (lastnameValue === "") {
-        showError(lastname, 'Last Name cannot be empty')
+        showError(lastname, 'last Name cannot be empty')
     } else {
-        removeError(lastname)
+        showSuccess(lastname)
     }
-    if (emailValue === "") {
-        showError(email, 'Email cannot be empty')
-    } else if (!isValid(email)){
-    removeError(email,' Looks like is not an Email')
+    if (emailValue === '') {
+        showError(email, 'email cannot be empty')
+    } else if (!isValid(email)) {
+        showError(email, 'Looks like this is not an email')
+    } else {
+        showSuccess(email)
     }
     if (passwordValue === "") {
-        showError(password, 'Password cannot be empty')
-    } else if (passwordValue.length <= 8) {
-        showError(password, 'Password is too short')
+        showError(password, 'pasword cannot be empty')
+    } else if (passwordValue.length <= 7) {
+        showError(password, 'passord is too short')
     } else {
-        removeError(password)
+        showSuccess(password)
     }
-
 }
 
+//  fucntion for error messages
 function showError(input, message) {
-    let inputElement = input.parentElement // .input-group
-    const span = inputElement.querySelector("span")
-    // add error inside the span
+    const inputGroup = input.parentElement
+    const span = inputGroup.querySelector("span")
+
     span.textContent = message
-    // add error inside the class
-    inputElement.className = 'input-group error'
-    // formControl.classList.add('error')
+    inputGroup.className = 'input-group error'
 
 }
-function removeError(input) {
-    let inputElement = input.parentElement
-    inputElement.className = 'remove error'
+function showSuccess(input) {
+    const inputGroup = input.parentElement
+    inputGroup.className = 'input-group success'
 
 }
 function isValid(email) {
-    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 
 }
+
