@@ -60,8 +60,9 @@ h5 {
   color: #d44646;
 }
 .input-group {
-  margin: 15px 0;
+  margin: 30px 0 0 0;
   position: relative;
+  /* margin-top: 40px; */
 }
 input {
   display: block;
@@ -105,17 +106,18 @@ input:focus {
   visibility: hidden;
 }
 .input-group span {
+  color: #e74e36;
   font-size: 12px;
   font-style: italic;
-  color: var(--red);
-  display: block;
-  text-align: right;
+  position: absolute;
+  top: 55px;
+  right: 0;
 }
 button {
   background: var(--green);
   border: 0;
   width: 100%;
-  margin: 0 auto;
+  margin: 30px 0 0 0;
   border-radius: 5px;
   color: aliceblue;
   text-transform: uppercase;

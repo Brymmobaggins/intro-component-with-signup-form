@@ -27,7 +27,7 @@ function checkInput() {
     }
     if (emailValue === '') {
         showError(email, 'Email cannot be empty')
-    } else if (!isValid(email)) {
+    } else if (!isValid(emailValue)) {
         showError(email, 'Looks like this is not an email')
     } else {
         showSuccess(email)
